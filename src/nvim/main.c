@@ -212,7 +212,7 @@ void early_init(void)
 }
 
 #ifdef MAKE_LIB
-int nvim_main(int argc, char **argv)
+int nvim_main_setup(int argc, char **argv)
 #else
 int main(int argc, char **argv)
 #endif
@@ -521,6 +521,13 @@ int main(int argc, char **argv)
 
   TIME_MSG("before starting main loop");
   ILOG("Starting Neovim main loop.");
+#ifdef MAKE_LIB
+  return 0;
+}
+
+int nvim_main_loop(void)
+{
+#endif
 
   /*
    * Call the main command loop.  This never returns.

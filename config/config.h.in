@@ -56,7 +56,7 @@
 #define FEAT_CSCOPE
 
 #ifndef UNIT_TESTING
-#cmakedefine HAVE_JEMALLOC
+//#cmakedefine HAVE_JEMALLOC
 #endif
 
 #cmakedefine HAVE_BE64TOH
